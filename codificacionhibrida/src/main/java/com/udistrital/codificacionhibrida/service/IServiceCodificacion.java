@@ -1,13 +1,14 @@
 package com.udistrital.codificacionhibrida.service;
 
-import com.udistrital.codificacionhibrida.dtos.CodificacionResponse;
-import com.udistrital.codificacionhibrida.dtos.DecodificacionResponse;
+import com.udistrital.codificacionhibrida.dtos.CodificacionResponseDto;
+import com.udistrital.codificacionhibrida.dtos.DecodificacionResponseDto;
+import com.udistrital.codificacionhibrida.exception.InvalidLengthException;
 
 public interface IServiceCodificacion {
 
     String returnMessage();
 
-    CodificacionResponse ObtenerMensajeCodificado(String mensaje);
+    CodificacionResponseDto ObtenerMensajeCodificado(String mensaje);
 
-    DecodificacionResponse ObtenerMensajeDecodificado(String mensaje);
+    DecodificacionResponseDto ObtenerMensajeDecodificado(String mensaje) throws InvalidLengthException;
 }

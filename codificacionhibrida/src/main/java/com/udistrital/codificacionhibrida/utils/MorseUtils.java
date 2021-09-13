@@ -1,6 +1,5 @@
 package com.udistrital.codificacionhibrida.utils;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class MorseUtils {
@@ -25,11 +24,11 @@ public class MorseUtils {
 
     public static String palabraAMorse(String palabra){
         String mensaje[] = palabra.split("");
-        System.out.println(Arrays.toString(mensaje));
+        //System.out.println(Arrays.toString(mensaje));
         HashMap<String,String> morse = CrearMapCodigoMorse.getLetterToMorse();
         StringBuilder cadena = new StringBuilder();
         for(String m : mensaje){
-            cadena.append(morse.get(m));
+            cadena.append((morse.get(m) == null) ? "" : morse.get(m));
             cadena.append(" ");
         }
         cadena.append("  ");
@@ -38,11 +37,11 @@ public class MorseUtils {
 
     public static String morseAPalabra(String palabra){
         String mensaje[] = palabra.split(" ");
-        System.out.println(Arrays.toString(mensaje));
+        //System.out.println(Arrays.toString(mensaje));
         HashMap<String,String> morse = CrearMapCodigoMorse.getMorseToLetter();
         StringBuilder cadena = new StringBuilder();
         for(String m : mensaje){
-            cadena.append(morse.get(m));
+            cadena.append((morse.get(m) == null) ? "" : morse.get(m));
         }
         cadena.append(" ");
         return cadena.toString();

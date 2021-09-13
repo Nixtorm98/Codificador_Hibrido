@@ -4,9 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class DecodificacionRequest {
-    private String mensajeCodificado;
+@AllArgsConstructor
+@Data
+public class DecodificacionResponseDto {
+
+    private String mensajeDecodificado;
+
 }

@@ -7,12 +7,12 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class CodificacionRequestDto {
+@NoArgsConstructor
+public class DecodificacionRequestDto {
 
     @NotEmpty(message = "El campo no puede estar vacío.")
-    @Pattern(regexp = "^[A-Za-z0-9]+(\\s[A-Za-z0-9]+)*$", message = "El mensaje contiene caracteres no permitidos")
-    private String mensaje;
+    @Pattern(regexp = "^[A-Za-z0-9=]*$", message = "El mensaje contiene caracteres no permitidos")
+    private String mensajeCodificado;
 
 }

@@ -5,8 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Data
-public class DecodificacionResponse {
-    private String mensajeDecodificado;
+@AllArgsConstructor
+public class CodificacionResponseDto {
+
+    private String mensajeConvertido;
+
 }
