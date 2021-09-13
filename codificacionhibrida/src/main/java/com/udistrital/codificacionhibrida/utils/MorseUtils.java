@@ -2,7 +2,6 @@ package com.udistrital.codificacionhibrida.utils;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Locale;
 
 public class MorseUtils {
 
