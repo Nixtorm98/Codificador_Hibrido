@@ -46,6 +46,11 @@ public class CrearMapCodigoMorse {
         morseToLetter.put("--...","7");
         morseToLetter.put("---..","8");
         morseToLetter.put("----.","9");
+        morseToLetter.put(".-.-.-",".");
+        morseToLetter.put("--..--",",");
+        morseToLetter.put("..--..","?");
+        morseToLetter.put("-.-.-.",";");
+        morseToLetter.put("-.-.--","!");
         letterToMorse = new HashMap<>();
         letterToMorse.put("A",".-");
         letterToMorse.put("B","-...");
@@ -84,6 +89,11 @@ public class CrearMapCodigoMorse {
         letterToMorse.put("7","--...");
         letterToMorse.put("8","---..");
         letterToMorse.put("9","----.");
+        letterToMorse.put(",","--..--");
+        letterToMorse.put(".",".-.-.-");
+        letterToMorse.put("?","..--..");
+        letterToMorse.put(";","-.-.-.");
+        letterToMorse.put("!","-.-.--");
     }
 
     public static HashMap<String, String> getMorseToLetter() {

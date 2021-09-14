@@ -6,6 +6,8 @@ import com.udistrital.codificacionhibrida.utils.Base64Utils;
 import com.udistrital.codificacionhibrida.utils.MorseUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.Locale;
+
 
 @Service
 public class ServiceImpl implements IServiceCodificacion{
@@ -13,7 +15,7 @@ public class ServiceImpl implements IServiceCodificacion{
     @Override
     public CodificacionResponseDto ObtenerMensajeCodificado(String mensaje) {
         CodificacionResponseDto codificacionResponse = new CodificacionResponseDto();
-        String mensajemorse = MorseUtils.convertirFraseAMorse(mensaje);
+        String mensajemorse = MorseUtils.convertirFraseAMorse(remplazarSimbolosNoConocidos(mensaje.toLowerCase()));
         String mensajeBase64 = Base64Utils.convertirTextoABase64(mensajemorse);
         codificacionResponse.setMensajeMorseCodificado("1. Morse: "+ mensajemorse);
         codificacionResponse.setMensajeConvertido("2. Base64: "+ mensajeBase64);
@@ -31,5 +33,15 @@ public class ServiceImpl implements IServiceCodificacion{
         decodificacionResponse.setMensajeDecodificado("1. Base 64 a morse : "+ mensajemorse);
         decodificacionResponse.setMensajeMorse("2. Morse a texto original: "+ mensajeFinal);
         return decodificacionResponse;
+    }
+
+    private String remplazarSimbolosNoConocidos(String mensaje){
+       String mensajesina = mensaje.replaceAll("á","a");
+       String mensajesine = mensajesina.replaceAll("é","e");
+       String mensajesini = mensajesine.replaceAll("í","i");
+       String mensajesino = mensajesini.replaceAll("ó","o");
+       String mensajesinu = mensajesino.replaceAll("ú","u");
+       String mensajesinsignos = mensajesinu.replaceAll("¿¡-_()","");
+       return mensajesinsignos;
     }
 }
