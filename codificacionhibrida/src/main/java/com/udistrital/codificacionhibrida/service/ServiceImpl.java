@@ -11,16 +11,12 @@ import org.springframework.stereotype.Service;
 public class ServiceImpl implements IServiceCodificacion{
 
     @Override
-    public String returnMessage() {
-        return "Hello World";
-    }
-
-    @Override
     public CodificacionResponseDto ObtenerMensajeCodificado(String mensaje) {
         CodificacionResponseDto codificacionResponse = new CodificacionResponseDto();
         String mensajemorse = MorseUtils.convertirFraseAMorse(mensaje);
         String mensajeBase64 = Base64Utils.convertirTextoABase64(mensajemorse);
-        codificacionResponse.setMensajeConvertido("El mensaje codificado es: "+ mensajeBase64);
+        codificacionResponse.setMensajeMorseCodificado("1. Morse: "+ mensajemorse);
+        codificacionResponse.setMensajeConvertido("2. Base64: "+ mensajeBase64);
         return codificacionResponse;
     }
 
@@ -32,7 +28,8 @@ public class ServiceImpl implements IServiceCodificacion{
         if(mensajeFinal == null || mensajeFinal.isEmpty()){
             throw new InvalidLengthException("El mensaje no pudo ser decodificado, revise el tamaño o contenido");
         }
-        decodificacionResponse.setMensajeDecodificado("El mensaje decodificado es: "+mensajeFinal);
+        decodificacionResponse.setMensajeDecodificado("1. Base 64 a morse : "+ mensajemorse);
+        decodificacionResponse.setMensajeMorse("2. Morse a texto original: "+ mensajeFinal);
         return decodificacionResponse;
     }
 }

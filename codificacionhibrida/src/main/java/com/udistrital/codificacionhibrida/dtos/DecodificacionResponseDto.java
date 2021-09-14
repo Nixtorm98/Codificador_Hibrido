@@ -11,4 +11,6 @@ public class DecodificacionResponseDto {
 
     private String mensajeDecodificado;
 
+    private String mensajeMorse;
+
 }

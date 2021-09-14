@@ -6,8 +6,6 @@ import com.udistrital.codificacionhibrida.exception.InvalidLengthException;
 
 public interface IServiceCodificacion {
 
-    String returnMessage();
-
     CodificacionResponseDto ObtenerMensajeCodificado(String mensaje);
 
     DecodificacionResponseDto ObtenerMensajeDecodificado(String mensaje) throws InvalidLengthException;

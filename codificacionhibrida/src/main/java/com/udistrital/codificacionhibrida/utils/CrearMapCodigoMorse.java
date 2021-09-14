@@ -23,6 +23,7 @@ public class CrearMapCodigoMorse {
         morseToLetter.put(".-..","L");
         morseToLetter.put("--","M");
         morseToLetter.put("-.","N");
+        morseToLetter.put("--.--","Ñ");
         morseToLetter.put("---","O");
         morseToLetter.put(".--.","P");
         morseToLetter.put("--.-","Q");
@@ -60,6 +61,7 @@ public class CrearMapCodigoMorse {
         letterToMorse.put("L",".-..");
         letterToMorse.put("M","--");
         letterToMorse.put("N","-.");
+        letterToMorse.put("Ñ","--.--");
         letterToMorse.put("O","---");
         letterToMorse.put("P",".--.");
         letterToMorse.put("Q","--.-");

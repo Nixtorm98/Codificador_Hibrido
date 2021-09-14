@@ -10,5 +10,6 @@ import lombok.NoArgsConstructor;
 public class CodificacionResponseDto {
 
     private String mensajeConvertido;
+    private String mensajeMorseCodificado;
 
 }
