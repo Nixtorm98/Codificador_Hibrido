@@ -12,7 +12,7 @@ import javax.validation.constraints.Pattern;
 public class CodificacionRequestDto {
 
     @NotEmpty(message = "El campo no puede estar vacío.")
-    @Pattern(regexp = "^[A-Za-z0-9\u00f1\u00d1,.!;?¿¡_()á-úÁ-Ú]+(\\s[A-Za-z0-9\u00f1\u00d1,.!;?¿¡_()á-úÁ-Ú]+)*$", message = "El mensaje contiene caracteres no permitidos")
+    @Pattern(regexp = "^[A-Za-z0-9\u00f1\u00d1,.!;?¿¡_():á-úÁ-Ú]+( +[A-Za-z0-9\u00f1\u00d1,.!;?¿¡_():á-úÁ-Ú]+)*$", message = "El mensaje contiene caracteres no permitidos")
     private String mensaje;
 
 }
